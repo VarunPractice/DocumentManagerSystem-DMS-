@@ -1,0 +1,45 @@
+﻿<Window x:Class="DCM_ver1.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DCM_ver1"
+        xmlns:views="clr-namespace:DCM_ver1.Views"
+         xmlns:vm="clr-namespace:DCM_ver1.ViewModels"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800" Background="LightGray">
+    <Window.DataContext>
+        <vm:MainWindowViewModel/>
+    </Window.DataContext>
+    <Window.Resources>
+        
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/Styles/Style.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
+    
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0">
+            
+            <views:DocumentControlView />
+          
+        </Grid>
+        <Grid Grid.Row="1">
+
+           
+            <views:DocumentEditorControl/>
+        </Grid>
+        <Grid Grid.Row="2">
+
+           
+            <views:RecentDocumentsControlView/>
+        </Grid>
+    </Grid>
+</Window>
